@@ -1,0 +1,60 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using TowerDefense.Managers;
+using UnityEngine;
+
+namespace TowerDefense.Units{
+    public class UnitMovement : MonoBehaviour
+    {
+        public GameObject[] waypoints;
+        private int currentWaypoint = 0;
+        private float lastWaypointSwitchTime = 0;
+        public UnitBase unitBase;
+
+        void Start()
+        {
+            lastWaypointSwitchTime = Time.time;
+        }
+
+        void Update()
+        {
+            var startPos = waypoints[currentWaypoint].transform.position;
+            var endPos = waypoints[currentWaypoint + 1].transform.position;
+
+            var pathLength = Vector3.Distance(startPos, endPos);
+            var totalTimeForPath = pathLength / unitBase.speed;
+            var currentTimeOnPath = Time.time - lastWaypointSwitchTime;
+
+            gameObject.transform.position = Vector2.Lerp(startPos, endPos, currentTimeOnPath / totalTimeForPath);
+
+            if(gameObject.transform.position.Equals(endPos))
+            {
+                if(currentWaypoint < waypoints.Length - 2)
+                {
+                    currentWaypoint++;
+                    lastWaypointSwitchTime = Time.time;
+                    RotateIntoMoveDirection();
+                }
+                else
+                {
+                    Destroy(gameObject);
+                    PlayerManager.Instance.Health--;
+                }
+            }
+        }
+
+        void RotateIntoMoveDirection()
+        {
+            var newStartPos = waypoints[currentWaypoint].transform.position;
+            var newEndPos = waypoints[currentWaypoint + 1].transform.position;
+            var newDirection = newEndPos - newStartPos;
+
+            var x = newDirection.x;
+            var y = newDirection.y;
+            var rotationAngle = Mathf.Atan2(y, x) * 180 / Mathf.PI;
+
+            var sprite = gameObject.transform.Find("Sprite ").gameObject; //BUG - Unable to find, causing NULL reference Error.
+            sprite.transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+        }
+    }
+}
