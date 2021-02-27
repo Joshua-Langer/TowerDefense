@@ -6,13 +6,22 @@ using UnityEngine;
 namespace TowerDefense.Units{
     public class UnitMovement : MonoBehaviour
     {
-        public GameObject[] waypoints;
+        [HideInInspector] public GameObject[] waypoints;
         private int currentWaypoint = 0;
         private float lastWaypointSwitchTime = 0;
         public UnitBase unitBase;
 
+        Sprite sprite;
+        SpriteRenderer _unitSprite;
+
+        void Awake()
+        {
+            sprite = unitBase.unitSprite;
+            _unitSprite = GetComponent<SpriteRenderer>();
+        }
         void Start()
         {
+            _unitSprite.sprite = sprite;
             lastWaypointSwitchTime = Time.time;
         }
 
@@ -53,8 +62,7 @@ namespace TowerDefense.Units{
             var y = newDirection.y;
             var rotationAngle = Mathf.Atan2(y, x) * 180 / Mathf.PI;
 
-            var sprite = gameObject.transform.Find("Sprite ").gameObject; //BUG - Unable to find, causing NULL reference Error.
-            sprite.transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+            transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
         }
     }
 }
