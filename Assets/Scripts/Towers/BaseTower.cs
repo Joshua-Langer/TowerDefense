@@ -8,7 +8,7 @@ namespace TowerDefense.Towers{
     {
         public float fireRate;
         public Sprite towerSprite;
-        public Sprite towerProjectile;
+        public GameObject towerProjectile;
         public int towerCost;
         public int towerSell;
     }

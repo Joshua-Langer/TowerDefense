@@ -15,7 +15,7 @@ MonoBehaviour:
   fireRate: 1.75
   towerSprite: {fileID: 6847566916998146498, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
-  towerProjectile: {fileID: 8151701411911983755, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
+  towerProjectile: {fileID: 7576261596943145446, guid: 224a6ba7f4498694e8e8d80bab16d609,
     type: 3}
   towerCost: 75
   towerSell: 50

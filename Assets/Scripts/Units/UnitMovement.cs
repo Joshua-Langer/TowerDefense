@@ -64,5 +64,18 @@ namespace TowerDefense.Units{
 
             transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
         }
+
+        public float DistanceToGoal()
+        {
+            var distance = 0f;
+            distance += Vector2.Distance(gameObject.transform.position, waypoints[currentWaypoint + 1].transform.position);
+            for(var i = currentWaypoint; i < waypoints.Length - 1; i++)
+            {
+                var startPos = waypoints[i].transform.position;
+                var endPos = waypoints[i + 1].transform.position;
+                distance = Vector2.Distance(startPos, endPos);
+            }
+            return distance;
+        }
     }
 }

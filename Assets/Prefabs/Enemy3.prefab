@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1446893203681791020}
   - component: {fileID: 1446893203681791027}
   - component: {fileID: 838502767}
+  - component: {fileID: 1954609220}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Enemy
@@ -97,3 +98,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   unitBase: {fileID: 11400000, guid: 7c1733194435cb64495bc41300f8f903, type: 2}
+--- !u!58 &1954609220
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446893203681791026}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.01025391, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3428831

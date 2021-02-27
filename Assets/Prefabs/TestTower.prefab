@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5352662756465580087}
   - component: {fileID: 5352662756465580086}
   - component: {fileID: 5352662756465580085}
+  - component: {fileID: 2804709084962387405}
   m_Layer: 0
   m_Name: TestTower
   m_TagString: Untagged
@@ -96,3 +97,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerData: {fileID: 11400000, guid: 3e7b4512453104a4eb26bc72684c65aa, type: 2}
+  towerCost: 0
+  enemiesInRange: []
+--- !u!58 &2804709084962387405
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352662756465580084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.030731916, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.7676566
