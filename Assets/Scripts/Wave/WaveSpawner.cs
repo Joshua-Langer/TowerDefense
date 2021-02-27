@@ -22,7 +22,7 @@ namespace TowerDefense.Waves{
 
         void Update()
         {
-            var currentWave = 0;
+            var currentWave = 1;
             if(currentWave < waveConfig.waveLimit)
             {
                 var timeInterval = Time.time - lastSpawnTime;
@@ -38,7 +38,7 @@ namespace TowerDefense.Waves{
                 if(enemiesSpawned == waveConfig.unitCount && GameObject.FindGameObjectWithTag("Enemy") == null)
                 {
                     GameManager.Instance.Wave++;
-                    //Add gold to Player Manager
+                    PlayerManager.Instance.Gold += 50;
                     enemiesSpawned = 0;
                     lastSpawnTime = Time.time;
                 }

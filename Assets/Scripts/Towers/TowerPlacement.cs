@@ -12,7 +12,8 @@ namespace TowerDefense.Towers{
 
         private bool CanPlaceTower()
         {
-            return tower == null;
+            var cost = towerPrefab.GetComponent<TowerController>().towerCost;
+            return tower == null && PlayerManager.Instance.Gold >= cost;
         }
 
         void OnMouseUp()

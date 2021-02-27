@@ -8,7 +8,6 @@ namespace TowerDefense.Units{
     {
         public int health;
         public Sprite unitSprite;
-        public int damage;
         public float speed;
     }
 }

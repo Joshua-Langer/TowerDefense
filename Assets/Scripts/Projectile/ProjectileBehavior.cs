@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Managers;
+using TowerDefense.Units;
 using UnityEngine;
 
 namespace TowerDefense.Projectile{
     public class ProjectileBehavior : MonoBehaviour
     {
         public float speed = 10;
-        public int damage = 1;
+        public int damage = 5;
         public GameObject target;
         public Vector3 startPos;
         public Vector3 targetPos;
@@ -29,8 +31,14 @@ namespace TowerDefense.Projectile{
             {
                 if(target != null)
                 {
-                    //Deduct from enemy health
-                    //Then if enemy is at 0 add gold to the player
+                    //TEMP, will use a bar for health later.
+                    target.GetComponent<UnitMovement>().health -= Mathf.Max(damage, 0);
+
+                    if(target.GetComponent<UnitMovement>().health <= 0)
+                    {
+                        Destroy(target);
+                        PlayerManager.Instance.Gold += 50;
+                    }
                 }
                 Destroy(gameObject);
             }

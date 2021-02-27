@@ -56,7 +56,6 @@ namespace TowerDefense.Towers{
                 Vector3 direction = gameObject.transform.position - target.transform.position;
                 gameObject.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
             }
-            Debug.Log(target);
         }
 
         void OnEnemyDestroy(GameObject enemy)
@@ -99,7 +98,6 @@ namespace TowerDefense.Towers{
             projectile.targetPos = targetPos;
 
             //Animations and SFX
-            Debug.Log(bulletPrefab);
         }
     }
 }
