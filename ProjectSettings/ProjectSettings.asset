@@ -632,10 +632,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 12113cb9-0c5c-4f44-8523-33c4e63ded35
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: TD2DU2019_30Days
+  organizationId: joshua-langer
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
