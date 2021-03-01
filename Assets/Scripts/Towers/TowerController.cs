@@ -7,14 +7,61 @@ using UnityEngine;
 namespace TowerDefense.Towers{
     public class TowerController : MonoBehaviour
     {
-        private int currentLevel;
-        private int maxLevel = 4;
-        public int TowerLevel { get { return currentLevel;} set{ currentLevel += TowerLevel;}}
         public BaseTower towerData;
         [HideInInspector] public int towerCost;
-
         private float lastShotTime = 0f;
         public List<GameObject> enemiesInRange;
+
+        private TowerLevel towerLevel;
+
+        public TowerLevel CurrentLevel
+        {
+            get
+            {
+                return towerLevel;
+            }
+            set
+            {
+                towerLevel = value;
+                var towerLevelIndex = towerData.levels.IndexOf(towerLevel);
+                var towerVisual = towerData.levels[towerLevelIndex].towerSprite;
+
+                for(var i = 0; i < towerData.levels.Count; i++)
+                {
+                    if(i == towerLevelIndex)
+                    {
+                        towerData.levels[i].towerSprite.SetActive(true);
+                    }
+                    else
+                    {
+                        towerData.levels[i].towerSprite.SetActive(false);
+                    }
+                }
+            }
+        }
+
+        public TowerLevel GetNextLevel()
+        {
+            var towerLevelIndex = towerData.levels.IndexOf(towerLevel);
+            var maxLevelIndex = towerData.levels.Count - 1;
+            if(towerLevelIndex < maxLevelIndex)
+            {
+                return towerData.levels[towerLevelIndex + 1];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public void IncreaseLevel()
+        {
+            var towerLevelIndex = towerData.levels.IndexOf(CurrentLevel);
+            if(towerLevelIndex < towerData.levels.Count - 1)
+            {
+                CurrentLevel = towerData.levels[towerLevelIndex + 1];
+            }
+        }
 
         void Awake()
         {
@@ -68,7 +115,8 @@ namespace TowerDefense.Towers{
             if(collision.gameObject.tag.Equals("Enemy"))
             {
                 enemiesInRange.Add(collision.gameObject);
-                //Setup Delegate - Add Listener
+                UnitDestructionDelegate del = collision.gameObject.GetComponent<UnitDestructionDelegate>();
+                del.unitDelegate += OnEnemyDestroy;
             }
         }
 
@@ -77,7 +125,8 @@ namespace TowerDefense.Towers{
             if(collision.gameObject.tag.Equals("Enemy"))
             {
                 enemiesInRange.Remove(collision.gameObject);
-                //Setup Delegate - Remove Listener
+                UnitDestructionDelegate del = collision.gameObject.GetComponent<UnitDestructionDelegate>();
+                del.unitDelegate -= OnEnemyDestroy;
             }
         }
 

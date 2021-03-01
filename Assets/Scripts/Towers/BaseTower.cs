@@ -11,5 +11,17 @@ namespace TowerDefense.Towers{
         public GameObject towerProjectile;
         public int towerCost;
         public int towerSell;
+
+        public List<TowerLevel> levels;
+    }
+
+    [System.Serializable]
+    public class TowerLevel
+    {
+        public int towerCost;
+        public int towerSell;
+        public float fireRate;
+        public GameObject towerSprite;
+        public GameObject towerProjectile;
     }
 }
