@@ -70,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -1806614517
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 3474409807868216878, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   unitBase: {fileID: 11400000, guid: 7c1733194435cb64495bc41300f8f903, type: 2}
+  health: 0
 --- !u!58 &1954609220
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -43,7 +43,13 @@ namespace TowerDefense.Managers{
 
         public void MainMenu()
         {
-            SceneManager.LoadScene(0); //0 is always in the build index as the main menu for this game.
+            //SceneManager.LoadScene(0); //0 is always in the build index as the main menu for this game.
+            Debug.Log("Main Menu is not yet implemented.");
+        }
+
+        public void ExitGame()
+        {
+            Application.Quit();
         }
     }
 }
