@@ -38,7 +38,7 @@ namespace TowerDefense.Waves{
                 if(enemiesSpawned == waveConfig.unitCount && GameObject.FindGameObjectWithTag("Enemy") == null)
                 {
                     currentWave++;
-                    PlayerManager.Instance.Gold += 50;
+                    PlayerManager.Instance.Gold += 125;
                     enemiesSpawned = 0;
                     lastSpawnTime = Time.time;
                 }

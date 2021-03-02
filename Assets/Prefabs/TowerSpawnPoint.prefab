@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerSpawnPoint: {fileID: 9105774556713097872}
   tower: {fileID: 0}
-  towerPrefab: {fileID: 5352662756465580084, guid: 56f70662ab37cea4aa96610fd11e08b3,
+  towerPrefab: {fileID: 1116575823281870964, guid: 622216f18925461449c046e0f390ffd7,
     type: 3}
 --- !u!61 &7010313539838228054
 BoxCollider2D:
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2800001, y: 1.2804807}
+    oldSize: {x: 1.27, y: 1.2704769}
     newSize: {x: 1.2800001, y: 1.2804807}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

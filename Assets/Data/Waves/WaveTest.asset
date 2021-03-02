@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a1743d9820a6a47ac805075c89d79b, type: 3}
   m_Name: WaveTest
   m_EditorClassIdentifier: 
-  unitCount: 15
-  waveLimit: 4
+  unitCount: 10
+  waveLimit: 5
   bossWave: 0
   waveUnits:
   - {fileID: 6669104526027914877, guid: c810e926efddece4dbcf12d3e247a0f9, type: 3}
   - {fileID: 5971044719526172935, guid: db04d23e0ad630246b035d7f7f130e50, type: 3}
   - {fileID: 1446893203681791026, guid: 54c6b019031118c4eb5848a83cb31d81, type: 3}
-  - {fileID: 3881202336487702790, guid: bdffc76d0da4bb749b141a51d1f9b109, type: 3}
