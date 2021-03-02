@@ -1,49 +1,50 @@
-#To get an idea of how to create a more advanced workflows, have a look at the example below.
-name: Actions 😎
+name: Actions
 
 on:
   pull_request: {}
-  push: { branches: [master] }
-
+  push: {branches: [master]}
+  
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-
+  
 jobs:
-  buildAndTestForSomePlatforms:
-    name: Build for ${{ matrix.targetPlatform }}
+  build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        unityVersion:
-          - 2019.4.1f1
-        targetPlatform:
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - WebGL # WebGL.
+          unityVersion:
+            - 2019.4.1f1
+          targetPlatform:
+            - WebGL
+            - StandaloneWindows64
     steps:
-      - uses: actions/checkout@v2
+      #Checkout
+      - name: Checkout Repo
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           lfs: true
+          
+      #Caches
       - uses: actions/cache@v2
         with:
-          path: ${{ matrix.projectPath }}/Library
-          key: Library-${{ matrix.projectPath }}-${{ matrix.targetPlatform }}
-          restore-keys: |
-            Library-${{ matrix.projectPath }}-
-            Library-
-      - uses: game-ci/unity-test-runner@v2
-        env:
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          path: Library
+          key: Library
+          
+      #Test
+      - name: Run Tests
+        uses: game-ci/unity-test-runner@v2
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-      - uses: game-ci/unity-builder@v2
-        with:
-          projectPath: ${{ matrix.projectPath }}
+          
+      # Build
+      - name: Build project for ${{ matrix.targetPlatform }}
+        uses: game-ci/unity-builder@v2
+        with: 
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
+      # Output
       - uses: actions/upload-artifact@v2
         with:
           name: Build
