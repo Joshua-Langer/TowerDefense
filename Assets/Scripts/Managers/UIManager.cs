@@ -33,7 +33,7 @@ namespace TowerDefense.Managers{
 
         public void NextLevel()
         {
-            //Load the next map for play
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         public void RestartLevel()
@@ -43,8 +43,12 @@ namespace TowerDefense.Managers{
 
         public void MainMenu()
         {
-            //SceneManager.LoadScene(0); //0 is always in the build index as the main menu for this game.
-            Debug.Log("Main Menu is not yet implemented.");
+            SceneManager.LoadScene(0); //0 is always in the build index as the main menu for this game.
+        }
+
+        public void StartGame()
+        {
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
 
         public void ExitGame()
