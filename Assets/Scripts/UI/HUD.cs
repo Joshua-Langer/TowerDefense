@@ -37,5 +37,20 @@ namespace TowerDefense.UI{
                 pausePanel.SetActive(false);
             }
         }
+
+        public void PauseMainMenu()
+        {
+            UIManager.Instance.MainMenu();
+        }
+
+        public void PauseRestartLevel()
+        {
+            UIManager.Instance.RestartLevel();
+        }
+
+        public void PauseQuitGame()
+        {
+            UIManager.Instance.ExitGame();
+        }
     }
 }
