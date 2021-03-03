@@ -49,8 +49,5 @@ namespace TowerDefense.Waves{
                 Debug.Log("Player Wins");
             }
         }
-
-
-
     }
 }

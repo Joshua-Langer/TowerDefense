@@ -7,8 +7,6 @@ using UnityEngine;
     {
         public static GameManager Instance = null;
 
-        private int level;
-        public int Wave {get; set;}
         [HideInInspector] public bool GamePaused {get; set;}
         [HideInInspector] public bool GameOver {get; set;}
 
