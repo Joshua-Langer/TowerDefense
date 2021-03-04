@@ -45,8 +45,7 @@ namespace TowerDefense.Waves{
             }
             else
             {
-                GameManager.Instance.GameOver = true;
-                Debug.Log("Player Wins");
+                GameManager.Instance.LevelComplete = true;
             }
         }
     }

@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-    namespace TowerDefense.Managers{
+namespace TowerDefense.Managers{
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance = null;
 
+        public string[] LevelList = new string[]
+            {
+                "Main Menu",
+                "Level1"
+            };
+
         [HideInInspector] public bool GamePaused {get; set;}
         [HideInInspector] public bool GameOver {get; set;}
+        [HideInInspector] public bool LevelComplete{get; set;}
 
         void Awake()
         {

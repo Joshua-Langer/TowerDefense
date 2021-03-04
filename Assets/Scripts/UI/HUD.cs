@@ -13,6 +13,7 @@ namespace TowerDefense.UI{
         public Text playerWave;
         public GameObject pausePanel;
         public GameObject gameOverPanel;
+        public GameObject levelCompletePanel;
 
         // Update is called once per frame
         void Update()
@@ -22,7 +23,13 @@ namespace TowerDefense.UI{
             playerWave.text = WaveSpawner.currentWave.ToString();
             Pause();
             if(GameManager.Instance.GameOver)
+            {
                 GameIsOver();
+            }
+            if(GameManager.Instance.LevelComplete)
+            {
+                LevelIsComplete();
+            }
         }
 
         void Pause()
@@ -44,6 +51,12 @@ namespace TowerDefense.UI{
         void GameIsOver()
         {
             gameOverPanel.SetActive(true);
+            //Time.timeScale = 0;
+        }
+
+        void LevelIsComplete()
+        {
+            levelCompletePanel.SetActive(true);
         }
 
         public void PauseMainMenu()
