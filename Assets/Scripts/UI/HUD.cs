@@ -12,6 +12,7 @@ namespace TowerDefense.UI{
         public Text playerGold;
         public Text playerWave;
         public GameObject pausePanel;
+        public GameObject gameOverPanel;
 
         // Update is called once per frame
         void Update()
@@ -20,6 +21,8 @@ namespace TowerDefense.UI{
             playerHealth.text = PlayerManager.Instance.Health.ToString();
             playerWave.text = WaveSpawner.currentWave.ToString();
             Pause();
+            if(GameManager.Instance.GameOver)
+                GameIsOver();
         }
 
         void Pause()
@@ -36,6 +39,11 @@ namespace TowerDefense.UI{
                 UIManager.Instance.PauseGame();
                 pausePanel.SetActive(false);
             }
+        }
+
+        void GameIsOver()
+        {
+            gameOverPanel.SetActive(true);
         }
 
         public void PauseMainMenu()
