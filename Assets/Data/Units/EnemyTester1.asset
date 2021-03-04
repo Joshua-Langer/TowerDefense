@@ -16,3 +16,4 @@ MonoBehaviour:
   unitSprite: {fileID: 1785240737630438142, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
   speed: 2
+  armor: 0

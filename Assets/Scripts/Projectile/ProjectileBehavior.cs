@@ -31,8 +31,8 @@ namespace TowerDefense.Projectile{
             {
                 if(target != null)
                 {
-                    //TEMP, will use a bar for health later.
-                    target.GetComponent<UnitMovement>().health -= Mathf.Max(damage, 0);
+                    //TEMP, will use a bar for health later. Still very temp for the armor.
+                    target.GetComponent<UnitMovement>().health -= Mathf.Max((damage - target.GetComponent<UnitMovement>().armor), 0);
 
                     if(target.GetComponent<UnitMovement>().health <= 0)
                     {

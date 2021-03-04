@@ -11,7 +11,7 @@ namespace TowerDefense.Units{
         private float lastWaypointSwitchTime = 0;
         public UnitBase unitBase;
         [HideInInspector] public int health;
-
+        [HideInInspector] public int armor;
         Sprite sprite;
         SpriteRenderer _unitSprite;
 
@@ -20,6 +20,7 @@ namespace TowerDefense.Units{
             sprite = unitBase.unitSprite;
             _unitSprite = GetComponent<SpriteRenderer>();
             health = unitBase.health;
+            armor = unitBase.armor;
         }
         void Start()
         {
