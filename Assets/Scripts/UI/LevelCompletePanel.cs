@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TowerDefense.Managers;
+using TowerDefense.Waves;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TowerDefense.UI{
     public class LevelCompletePanel : MonoBehaviour
@@ -11,11 +13,13 @@ namespace TowerDefense.UI{
         public void NextLevel()
         {
             UIManager.Instance.NextLevel();
+            WaveSpawner.currentWave = 1;
+            gameObject.SetActive(false);
         }
 
         void Awake()
         {
-            nextLevel.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }

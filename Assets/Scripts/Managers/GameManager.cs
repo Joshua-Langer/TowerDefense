@@ -11,7 +11,11 @@ namespace TowerDefense.Managers{
         public string[] LevelList = new string[]
             {
                 "Main Menu",
-                "Level1"
+                "Level1",
+                "Level2",
+                "Level3",
+                "Level4",
+                "Level5"
             };
 
         [HideInInspector] public bool GamePaused {get; set;}

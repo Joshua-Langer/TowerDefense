@@ -15,6 +15,13 @@ namespace TowerDefense.UI{
         public GameObject gameOverPanel;
         public GameObject levelCompletePanel;
 
+        void Awake()
+        {
+            pausePanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+            levelCompletePanel.SetActive(false);
+        }
+
         // Update is called once per frame
         void Update()
         {
