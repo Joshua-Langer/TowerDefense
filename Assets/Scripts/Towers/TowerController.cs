@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Managers;
 using TowerDefense.Projectile;
 using TowerDefense.Units;
 using UnityEngine;
@@ -58,6 +59,16 @@ namespace TowerDefense.Towers{
             }
         }
 
+        private bool CanUpgradeTower()
+        {
+            TowerLevel nextTowerLevel = GetNextLevel();
+            if(nextTowerLevel != null)
+            {
+                return PlayerManager.Instance.Gold >= nextTowerLevel.cost;
+            }
+            return false;
+        }
+
         void OnEnable()
         {
             CurrentLevel = levels[0];
@@ -71,5 +82,16 @@ namespace TowerDefense.Towers{
                 CurrentLevel = levels[towerLevelIndex + 1];
             }
         }
+
+        private void OnMouseUp()
+        {
+            if(CanUpgradeTower())
+            {
+                IncreaseLevel();
+                PlayerManager.Instance.Gold -= CurrentLevel.cost;
+            }
+        }
+
+        
     }
 }

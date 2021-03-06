@@ -9,5 +9,6 @@ namespace TowerDefense.Units{
         public int health;
         public Sprite unitSprite;
         public float speed;
+        public int armor;
     }
 }

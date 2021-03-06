@@ -20,7 +20,15 @@ namespace TowerDefense.Managers{
         public int Health
         {
             get { return health;}
-            set { health = value;}
+            set
+            { 
+                 //Camera Shake?
+                 health = value;
+                 if(health <=0 && !GameManager.Instance.GameOver)
+                 {
+                     GameManager.Instance.GameOver = true;
+                 }
+            }
         }
 
         void Awake()

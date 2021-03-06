@@ -12,6 +12,15 @@ namespace TowerDefense.UI{
         public Text playerGold;
         public Text playerWave;
         public GameObject pausePanel;
+        public GameObject gameOverPanel;
+        public GameObject levelCompletePanel;
+
+        void Start()
+        {
+            pausePanel.SetActive(false);
+            gameOverPanel.SetActive(false);
+            levelCompletePanel.SetActive(false);
+        }
 
         // Update is called once per frame
         void Update()
@@ -20,6 +29,18 @@ namespace TowerDefense.UI{
             playerHealth.text = PlayerManager.Instance.Health.ToString();
             playerWave.text = WaveSpawner.currentWave.ToString();
             Pause();
+            if(GameManager.Instance.GameOver)
+            {
+                GameIsOver();
+            }
+            if(GameManager.Instance.LevelComplete)
+            {
+                LevelIsComplete();
+            }
+            else if(!GameManager.Instance.LevelComplete)
+            {
+                levelCompletePanel.SetActive(false);
+            }
         }
 
         void Pause()
@@ -36,6 +57,17 @@ namespace TowerDefense.UI{
                 UIManager.Instance.PauseGame();
                 pausePanel.SetActive(false);
             }
+        }
+
+        void GameIsOver()
+        {
+            gameOverPanel.SetActive(true);
+            //Time.timeScale = 0;
+        }
+
+        void LevelIsComplete()
+        {
+            levelCompletePanel.SetActive(true);
         }
 
         public void PauseMainMenu()

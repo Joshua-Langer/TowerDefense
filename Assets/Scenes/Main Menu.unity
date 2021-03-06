@@ -255,6 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d013c174b20ba874785bf1287755d158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelList:
+  - Main Menu
+  - Level1
 --- !u!114 &301469452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,7 +1009,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alpha 0.1.0(Build 0019)
+  m_Text: Alpha 0.1.2(Build 0020)
 --- !u!222 &810617285
 CanvasRenderer:
   m_ObjectHideFlags: 0
