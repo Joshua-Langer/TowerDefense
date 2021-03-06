@@ -16,30 +16,11 @@ namespace TowerDefense.Towers{
             return tower == null && PlayerManager.Instance.Gold >= cost;
         }
 
-        private bool CanUpgradeTower()
-        {
-            if(tower != null)
-            {
-                TowerController towerData = tower.GetComponent<TowerController>();
-                TowerLevel nextTowerLevel = towerData.GetNextLevel();
-                if(nextTowerLevel != null)
-                {
-                    return PlayerManager.Instance.Gold >= nextTowerLevel.cost;
-                }
-            }
-            return false;
-        }
-
-        void OnMouseUp()
+        private void OnMouseUp()
         {
             if(CanPlaceTower())
             {
                 tower = Instantiate(towerPrefab, towerSpawnPoint.position, Quaternion.identity) as GameObject;
-                PlayerManager.Instance.Gold -= tower.GetComponent<TowerController>().CurrentLevel.cost;
-            }
-            else if(CanUpgradeTower())
-            {
-                tower.GetComponent<TowerController>().IncreaseLevel();
                 PlayerManager.Instance.Gold -= tower.GetComponent<TowerController>().CurrentLevel.cost;
             }
         }

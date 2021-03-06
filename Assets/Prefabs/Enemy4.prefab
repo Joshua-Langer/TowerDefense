@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3881202336487702790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: 0, z: 0}
+  m_LocalPosition: {x: -25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,6 +101,7 @@ MonoBehaviour:
   waypoints: []
   unitBase: {fileID: 11400000, guid: 35600bdb9967cb041b247ff0720626cc, type: 2}
   health: 0
+  armor: 0
 --- !u!58 &7851608135233366511
 CircleCollider2D:
   m_ObjectHideFlags: 0

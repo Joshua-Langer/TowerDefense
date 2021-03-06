@@ -15,7 +15,7 @@ namespace TowerDefense.UI{
         public GameObject gameOverPanel;
         public GameObject levelCompletePanel;
 
-        void Awake()
+        void Start()
         {
             pausePanel.SetActive(false);
             gameOverPanel.SetActive(false);
@@ -36,6 +36,10 @@ namespace TowerDefense.UI{
             if(GameManager.Instance.LevelComplete)
             {
                 LevelIsComplete();
+            }
+            else if(!GameManager.Instance.LevelComplete)
+            {
+                levelCompletePanel.SetActive(false);
             }
         }
 

@@ -19,7 +19,15 @@ namespace TowerDefense.UI{
 
         void Awake()
         {
-            gameObject.SetActive(false);
+            GameManager.Instance.LevelComplete = false;
+        }
+
+        void Start()
+        {
+            if(SceneManager.GetActiveScene().buildIndex == 5)
+            {
+                nextLevel.SetActive(false);
+            }
         }
     }
 }
