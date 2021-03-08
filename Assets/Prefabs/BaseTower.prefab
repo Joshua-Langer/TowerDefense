@@ -140,17 +140,17 @@ MonoBehaviour:
   - cost: 50
     fireRate: 1.66
     towerGO: {fileID: 1116575824625301401}
-    projectile: {fileID: 7576261596943145446, guid: 224a6ba7f4498694e8e8d80bab16d609,
+    projectile: {fileID: 7576261596943145446, guid: c3fa94bf3fe011943a5bed95c90e880e,
       type: 3}
   - cost: 75
     fireRate: 1.33
     towerGO: {fileID: 1116575824510230267}
-    projectile: {fileID: 7576261596943145446, guid: 224a6ba7f4498694e8e8d80bab16d609,
+    projectile: {fileID: 7576261596943145446, guid: de4db6094200d064390ea6b44a0407e3,
       type: 3}
   - cost: 100
     fireRate: 1
     towerGO: {fileID: 1116575823718564522}
-    projectile: {fileID: 7576261596943145446, guid: 224a6ba7f4498694e8e8d80bab16d609,
+    projectile: {fileID: 7576261596943145446, guid: d5fe31b320ac5374c9f28d2dce6616f0,
       type: 3}
 --- !u!114 &1116575823281870965
 MonoBehaviour:

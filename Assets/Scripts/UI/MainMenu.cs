@@ -13,7 +13,7 @@ namespace TowerDefense.UI{
 
         public void QuitGame()
         {
-            UIManager.Instance.ExitGame();
+            Application.Quit();
         }
 
         
