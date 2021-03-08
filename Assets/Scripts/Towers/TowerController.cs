@@ -74,7 +74,6 @@ namespace TowerDefense.Towers{
         void OnEnable()
         {
             CurrentLevel = levels[0];
-            Debug.Log(levels.Count);
         }
 
         public void IncreaseLevel()
