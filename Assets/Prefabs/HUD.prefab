@@ -330,6 +330,9 @@ MonoBehaviour:
   pausePanel: {fileID: 5264790550923829651}
   gameOverPanel: {fileID: 5264790551225979613}
   levelCompletePanel: {fileID: 5264790551746487670}
+  gameOverQuit: {fileID: 5264790552255697186}
+  pauseQuit: {fileID: 5264790551450759706}
+  levelCompleteQuit: {fileID: 5264790550459386845}
 --- !u!1 &5264790550424093341
 GameObject:
   m_ObjectHideFlags: 0

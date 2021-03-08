@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b619bac723f0d614b958c6b384c17c13, type: 3}
-  m_Name: EnemyTester4
+  m_Name: EasyEnemy3
   m_EditorClassIdentifier: 
-  health: 100
-  unitSprite: {fileID: 5281382862928127884, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
+  health: 15
+  unitSprite: {fileID: 3474409807868216878, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
-  speed: 1.5
-  armor: 2
+  speed: 3
+  armor: 1

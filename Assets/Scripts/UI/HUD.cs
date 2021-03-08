@@ -14,7 +14,23 @@ namespace TowerDefense.UI{
         public GameObject pausePanel;
         public GameObject gameOverPanel;
         public GameObject levelCompletePanel;
+        public GameObject gameOverQuit;
+        public GameObject pauseQuit;
+        public GameObject levelCompleteQuit;
 
+        void Awake()
+        {
+            #if UNITY_EDITOR
+            gameOverQuit.SetActive(false);
+            pauseQuit.SetActive(false);
+            levelCompleteQuit.SetActive(false);
+            #endif
+            #if UNITY_EDITOR_WEBGL
+            gameOverQuit.SetActive(false);
+            pauseQuit.SetActive(false);
+            levelCompleteQuit.SetActive(false);
+            #endif
+        }
         void Start()
         {
             pausePanel.SetActive(false);
@@ -28,7 +44,7 @@ namespace TowerDefense.UI{
             playerGold.text = PlayerManager.Instance.Gold.ToString();
             playerHealth.text = PlayerManager.Instance.Health.ToString();
             playerWave.text = WaveSpawner.currentWave.ToString();
-            Pause();
+            
             if(GameManager.Instance.GameOver)
             {
                 GameIsOver();
@@ -43,19 +59,26 @@ namespace TowerDefense.UI{
             }
         }
 
-        void Pause()
+        void LateUpdate()
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
+            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+            {
+                Toggle();
+            }
+        }
+
+        void Toggle()
+        {
+            pausePanel.SetActive(!pausePanel.activeSelf);
+            if(pausePanel.activeSelf)
             {
                 GameManager.Instance.GamePaused = true;
-                UIManager.Instance.PauseGame();
-                pausePanel.SetActive(true);  
+                Time.timeScale = 0;
             }
-            if(Input.GetKey(KeyCode.Space) && GameManager.Instance.GamePaused)
+            else
             {
                 GameManager.Instance.GamePaused = false;
-                UIManager.Instance.PauseGame();
-                pausePanel.SetActive(false);
+                Time.timeScale = 1;
             }
         }
 
