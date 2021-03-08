@@ -12,12 +12,14 @@ namespace TowerDefense.Towers{
         public float fireRate;
         public GameObject towerGO;
         public GameObject projectile;
+        public GameObject firePoint;
     }
 
     public class TowerController : MonoBehaviour
     {
         public List<TowerLevel> levels;
         private TowerLevel towerLevel;
+        public int currentLevel;
 
         public GameObject fullPrefab;
 
@@ -74,6 +76,7 @@ namespace TowerDefense.Towers{
         void OnEnable()
         {
             CurrentLevel = levels[0];
+            currentLevel = 0;
         }
 
         public void IncreaseLevel()
@@ -82,6 +85,7 @@ namespace TowerDefense.Towers{
             if(towerLevelIndex < levels.Count - 1)
             {
                 CurrentLevel = levels[towerLevelIndex + 1];
+                currentLevel++;
             }
         }
 
