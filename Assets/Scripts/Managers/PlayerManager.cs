@@ -46,7 +46,7 @@ namespace TowerDefense.Managers{
 
         void Start()
         {
-            Gold = 150;
+            Gold = 100;
             Health = 15; //DEBUG TESTING ONLY. Otherwise health is between 5 and 10, not decided on final number yet, subject to tuning and testing.
         }
     }

@@ -45,7 +45,7 @@ namespace TowerDefense.Towers{
                     lastShotTime = Time.time;
                 }
                 Vector3 direction = gameObject.transform.position - target.transform.position;
-                gameObject.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1));
+                gameObject.transform.rotation = Quaternion.AngleAxis(Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI, new Vector3(0, 0, 1)); //TODO: Fix the sprite rotations to be all the same regardless of sprite. Likely needs to face Left.
             }
         }
 
@@ -53,7 +53,7 @@ namespace TowerDefense.Towers{
         {
             var bulletPrefab = towerController.CurrentLevel.projectile;
 
-            var startPos = gameObject.transform.position;
+            var startPos = towerController.levels[towerController.currentLevel].firePoint.transform.position;
             var targetPos = target.transform.position;
             startPos.z = bulletPrefab.transform.position.z;
             targetPos.z = bulletPrefab.transform.position.z;

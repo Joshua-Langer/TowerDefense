@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b619bac723f0d614b958c6b384c17c13, type: 3}
+  m_Name: MedEnemy2
+  m_EditorClassIdentifier: 
+  health: 20
+  unitSprite: {fileID: 8173051871130434640, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
+    type: 3}
+  speed: 3.5
+  armor: 3

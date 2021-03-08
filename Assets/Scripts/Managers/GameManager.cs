@@ -18,9 +18,9 @@ namespace TowerDefense.Managers{
                 "Level5"
             };
 
-        [HideInInspector] public bool GamePaused {get; set;}
-        [HideInInspector] public bool GameOver {get; set;}
-        [HideInInspector] public bool LevelComplete{get; set;}
+        public bool GamePaused {get; set;}
+        public bool GameOver {get; set;}
+        public bool LevelComplete{get; set;}
 
         void Awake()
         {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TowerDefense.Player;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace TowerDefense.Managers{
@@ -19,26 +20,16 @@ namespace TowerDefense.Managers{
             DontDestroyOnLoad(gameObject);
         }
 
-        public void PauseGame()
-        {
-            if(GameManager.Instance.GamePaused) //See if the game was paused and pause all time in the game world.
-            {
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
-            }
-        }
-
         public void NextLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Will be bugged if there isn't a scene remaining.
+            SavePlayerToInstance();
         }
 
         public void RestartLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //get the active scene buildIndex ID and load it again.
+            LoadPlayerFromInstance();
         }
 
         public void MainMenu()
@@ -49,11 +40,24 @@ namespace TowerDefense.Managers{
         public void StartGame()
         {
             SceneManager.LoadScene(GameManager.Instance.LevelList[1], LoadSceneMode.Single);
+            SavePlayerToInstance(); //TEMP FOR NOW until the level screen is setup.
         }
 
         public void ExitGame()
         {
             Application.Quit();
+        }
+
+        void SavePlayerToInstance()
+        {
+            PlayerInstance.CurrentGold = PlayerManager.Instance.Gold;
+            PlayerInstance.CurrentHealth = PlayerManager.Instance.Health;
+        }
+
+        void LoadPlayerFromInstance()
+        {
+            PlayerManager.Instance.Gold = PlayerInstance.CurrentGold;
+            PlayerManager.Instance.Health = PlayerInstance.CurrentHealth;
         }
     }
 }
