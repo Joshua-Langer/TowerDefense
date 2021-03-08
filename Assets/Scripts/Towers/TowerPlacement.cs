@@ -8,21 +8,64 @@ namespace TowerDefense.Towers{
     {
         public Transform towerSpawnPoint;
         [SerializeField]private GameObject tower;
-        public GameObject towerPrefab; //TESTING ONLY
+        
+        public Color hoverColor;
+        public Color notEnoughGoldColor;
+        public Color startColor;
+        public SpriteRenderer pointSprite;
 
-        private bool CanPlaceTower()
+        void OnMouseDown()
         {
-            var cost = towerPrefab.GetComponent<TowerController>().levels[0].cost;
-            return tower == null && PlayerManager.Instance.Gold >= cost;
+            if(tower != null)
+            {
+                BuildManager.Instance.SelectPoint(this);
+                return;
+            }
+
+            if(!BuildManager.Instance.CanBuild)
+            {
+                return;
+            }
+            BuildTower(BuildManager.Instance.GetTowerToBuild()); 
         }
 
-        private void OnMouseUp()
+        void BuildTower(TowerController towerToBuild)
         {
-            if(CanPlaceTower())
+            if(!BuildManager.Instance.HasGold)
             {
-                tower = Instantiate(towerPrefab, towerSpawnPoint.position, Quaternion.identity) as GameObject;
-                PlayerManager.Instance.Gold -= tower.GetComponent<TowerController>().CurrentLevel.cost;
+                Debug.Log("Not enough gold");
+                return;
+            }
+
+            PlayerManager.Instance.Gold -= towerToBuild.levels[0].cost;
+
+            GameObject _tower = (GameObject)Instantiate(towerToBuild.fullPrefab, towerSpawnPoint);
+            _tower.SetActive(true);
+            tower = _tower;
+        }
+
+        void OnMouseEnter()
+        {
+            if(!BuildManager.Instance.CanBuild)
+            {
+                return;
+            }
+
+            if(BuildManager.Instance.HasGold)
+            {
+                pointSprite.color = hoverColor;
+            }
+            else
+            {
+                pointSprite.color = notEnoughGoldColor;
             }
         }
+
+        void OnMouseExit()
+        {
+            pointSprite.color = startColor;
+        }
+
+
     }
 }

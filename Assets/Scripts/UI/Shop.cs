@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Managers;
 using TowerDefense.Towers;
 using UnityEngine;
 
@@ -12,12 +13,12 @@ namespace TowerDefense.UI
 
         public void SelectStandardTower()
         {
-            Debug.Log("Standard Tower Selected");
+            BuildManager.Instance.SelectTowerToBuild(standardTower);
         }
 
         public void SelectMachineGunTower()
         {
-            Debug.Log("MachineGun Tower Selected");
+            BuildManager.Instance.SelectTowerToBuild(machineGunTower);
         }
     }
 }

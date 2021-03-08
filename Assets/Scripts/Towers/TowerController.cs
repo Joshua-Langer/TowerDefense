@@ -19,6 +19,8 @@ namespace TowerDefense.Towers{
         public List<TowerLevel> levels;
         private TowerLevel towerLevel;
 
+        public GameObject fullPrefab;
+
         public TowerLevel CurrentLevel
         {
             get

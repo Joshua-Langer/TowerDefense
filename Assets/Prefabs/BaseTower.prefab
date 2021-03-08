@@ -152,6 +152,7 @@ MonoBehaviour:
     towerGO: {fileID: 1116575823718564522}
     projectile: {fileID: 7576261596943145446, guid: d5fe31b320ac5374c9f28d2dce6616f0,
       type: 3}
+  fullPrefab: {fileID: 1116575823281870964}
 --- !u!114 &1116575823281870965
 MonoBehaviour:
   m_ObjectHideFlags: 0
