@@ -133,22 +133,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - cost: 100
-    fireRate: 1.25
+    fireRate: 1
     towerGO: {fileID: 1116575822916570364}
     projectile: {fileID: 7576261596943145446, guid: b22df0064afa16749bd4057d00e8d756,
       type: 3}
   - cost: 60
-    fireRate: 1.66
+    fireRate: 0.75
     towerGO: {fileID: 1116575824625301401}
     projectile: {fileID: 7576261596943145446, guid: e14cbeb3f1f2fee448a8a3c497b5c52d,
       type: 3}
   - cost: 85
-    fireRate: 1.33
+    fireRate: 0.66
     towerGO: {fileID: 1116575824510230267}
     projectile: {fileID: 7576261596943145446, guid: bc5a59d65a8359e4d85e82fa20bbd8d0,
       type: 3}
   - cost: 100
-    fireRate: 1
+    fireRate: 0.5
     towerGO: {fileID: 1116575823718564522}
     projectile: {fileID: 7576261596943145446, guid: d710e72d640495145894868aa6e4f301,
       type: 3}
@@ -252,7 +252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 2539138467979641940, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
+  m_Sprite: {fileID: -1062004411004075294, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

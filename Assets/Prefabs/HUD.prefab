@@ -3640,6 +3640,8 @@ MonoBehaviour:
     type: 3}
   machineGunTower: {fileID: 1116575823281870986, guid: 38015dd4d9914d94ba9249ce7425f011,
     type: 3}
+  standardCost: {fileID: 5264790551470747519}
+  machineGunCost: {fileID: 5264790551705144079}
 --- !u!1 &5264790552297974551
 GameObject:
   m_ObjectHideFlags: 0
