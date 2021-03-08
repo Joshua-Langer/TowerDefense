@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7576261596943145441}
   - component: {fileID: -8046465790609656023}
   m_Layer: 0
-  m_Name: MachineGunProjectile4
+  m_Name: CannonProjectile2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f057aeda5e4fbed43a023134da069292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 8
+  speed: 8
+  damage: 10
   target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
@@ -136,7 +136,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 8151701411911983755, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
+  m_Sprite: {fileID: -2091190902965128135, guid: e2509d2f2a9427d408c5d9fa27d6cf55,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
