@@ -17,6 +17,7 @@ namespace TowerDefense.UI{
         public GameObject gameOverQuit;
         public GameObject pauseQuit;
         public GameObject levelCompleteQuit;
+        public GameObject fpsDisplay;
 
         void Awake()
         {
@@ -65,6 +66,10 @@ namespace TowerDefense.UI{
             {
                 Toggle();
             }
+            if(Input.GetKeyDown(KeyCode.F4))
+            {
+                FPSToggle();
+            }
         }
 
         void Toggle()
@@ -80,6 +85,11 @@ namespace TowerDefense.UI{
                 GameManager.Instance.GamePaused = false;
                 Time.timeScale = 1;
             }
+        }
+
+        void FPSToggle()
+        {
+            fpsDisplay.SetActive(!fpsDisplay.activeSelf);
         }
 
         void GameIsOver()
