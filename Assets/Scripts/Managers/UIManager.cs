@@ -52,6 +52,9 @@ namespace TowerDefense.Managers{
         {
             PlayerInstance.CurrentGold = PlayerManager.Instance.Gold;
             PlayerInstance.CurrentHealth = PlayerManager.Instance.Health;
+            PlayerPrefs.SetInt("PlayerGold", PlayerInstance.CurrentGold);
+            PlayerPrefs.SetInt("PlayerHealth", PlayerInstance.CurrentHealth);
+            //save last level completed.
         }
 
         void LoadPlayerFromInstance()

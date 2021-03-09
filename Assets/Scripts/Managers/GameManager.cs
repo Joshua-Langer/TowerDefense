@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,6 +34,17 @@ namespace TowerDefense.Managers{
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(gameObject);
+        }
+
+        void Start()
+        {
+            LoadSaves();
+        }
+
+        void LoadSaves()
+        {
+            PlayerInstance.CurrentGold = PlayerPrefs.GetInt("PlayerGold");
+            PlayerInstance.CurrentHealth = PlayerPrefs.GetInt("PlayerHealth");
         }
     }
 }
