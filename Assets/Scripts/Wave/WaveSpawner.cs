@@ -14,7 +14,8 @@ namespace TowerDefense.Waves{
 
         private float lastSpawnTime = 0f;
         private int enemiesSpawned = 0;
-        public static int currentWave = 1;
+        public static int currentWave = 0;
+        private bool firstWave = true;
         
         void Start()
         {
@@ -27,13 +28,17 @@ namespace TowerDefense.Waves{
             {
                 var timeInterval = Time.time - lastSpawnTime;
                 var spawnInterval = timeBetweenSpawns;
-                
                 if(((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) || timeInterval > spawnInterval) && enemiesSpawned < waveConfig.unitCount)
                 {
+                    firstWave = false;
                     lastSpawnTime = Time.time;
                     var newEnemy = Instantiate(waveConfig.waveUnits[Random.Range(0, waveConfig.waveUnits.Length)]) as GameObject;
                     newEnemy.GetComponent<UnitMovement>().waypoints = waypoints;
                     enemiesSpawned++;
+                }
+                if(firstWave)
+                {
+                    currentWave = 1;
                 }
                 if(enemiesSpawned == waveConfig.unitCount && GameObject.FindGameObjectWithTag("Enemy") == null)
                 {

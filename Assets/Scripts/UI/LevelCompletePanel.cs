@@ -17,7 +17,7 @@ namespace TowerDefense.UI{
         public void NextLevel()
         {
             PlayerPrefs.SetInt("LevelReached", levelToUnlock);
-            UIManager.Instance.NextLevel();
+            UIManager.Instance.NextLevel(nextLevel);
             WaveSpawner.currentWave = 1;
             gameObject.SetActive(false);
         }
