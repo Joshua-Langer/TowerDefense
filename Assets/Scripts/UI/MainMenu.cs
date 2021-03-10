@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TowerDefense.Managers;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TowerDefense.UI{
     public class MainMenu : MonoBehaviour
@@ -11,7 +12,7 @@ namespace TowerDefense.UI{
 
         public void StartGame()
         {
-            UIManager.Instance.StartGame();
+            SceneManager.LoadScene("LevelSelect");
         }
 
         public void QuitGame()

@@ -35,16 +35,5 @@ namespace TowerDefense.Managers{
             }
             DontDestroyOnLoad(gameObject);
         }
-
-        void Start()
-        {
-            LoadSaves();
-        }
-
-        void LoadSaves()
-        {
-            PlayerInstance.CurrentGold = PlayerPrefs.GetInt("PlayerGold");
-            PlayerInstance.CurrentHealth = PlayerPrefs.GetInt("PlayerHealth");
-        }
     }
 }
