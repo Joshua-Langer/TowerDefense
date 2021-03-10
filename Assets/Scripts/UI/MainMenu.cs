@@ -22,7 +22,7 @@ namespace TowerDefense.UI{
 
         void Awake()
         {
-            #if UNITY_EDITOR_WEB_GL
+            #if UNITY_WEB_GL
             quitButton.SetActive(false);
             #endif
 

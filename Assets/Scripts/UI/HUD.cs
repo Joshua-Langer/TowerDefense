@@ -26,7 +26,7 @@ namespace TowerDefense.UI{
             pauseQuit.SetActive(false);
             levelCompleteQuit.SetActive(false);
             #endif
-            #if UNITY_EDITOR_WEBGL
+            #if UNITY_WEB_GL
             gameOverQuit.SetActive(false);
             pauseQuit.SetActive(false);
             levelCompleteQuit.SetActive(false);
