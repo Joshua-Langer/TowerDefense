@@ -9,6 +9,8 @@ namespace TowerDefense.UI{
     public class MainMenu : MonoBehaviour
     {
         public GameObject quitButton;
+        public GameObject infoPanel;
+        public GameObject creditsPanel;
 
         public void StartGame()
         {
@@ -18,6 +20,26 @@ namespace TowerDefense.UI{
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        public void OpenInfo()
+        {
+            infoPanel.SetActive(true);
+        }
+
+        public void CloseInfo()
+        {
+            infoPanel.SetActive(false);
+        }
+
+        public void OpenCredits()
+        {
+            creditsPanel.SetActive(true);
+        }
+
+        public void CloseCredits()
+        {
+            creditsPanel.SetActive(false);
         }
 
         void Awake()

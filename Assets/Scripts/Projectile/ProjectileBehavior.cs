@@ -40,6 +40,8 @@ namespace TowerDefense.Projectile{
                         PlayerManager.Instance.Gold += target.GetComponent<UnitMovement>().goldRewardOnDeath;
                         Destroy(target);
                         //SFX and VFX
+                        AudioSource audioSource = target.GetComponent<AudioSource>();
+                        AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                     }
                 }
                 Destroy(gameObject);

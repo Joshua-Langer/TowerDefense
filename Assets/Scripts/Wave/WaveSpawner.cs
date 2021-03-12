@@ -39,6 +39,7 @@ namespace TowerDefense.Waves{
                 if(firstWave)
                 {
                     currentWave = 1;
+                    AudioManager.Instance.WaveStartSound(waypoints[0].transform.position);
                 }
                 if(enemiesSpawned == waveConfig.unitCount && GameObject.FindGameObjectWithTag("Enemy") == null)
                 {

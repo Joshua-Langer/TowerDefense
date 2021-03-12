@@ -2,17 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace TowerDefense.Managers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AudioManager : MonoBehaviour
     {
-        
-    }
+        public static AudioManager Instance;
+        // SFX
+        [SerializeField]
+        AudioClip unitDeathSound;
+        [SerializeField]
+        AudioClip waveStartSound;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Header("Audio Source")]
+        AudioSource sfx;
+        void Awake()
+        {
+            if(Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
+        }
+        public IEnumerator UnitDeathSound(Vector3 transform)
+        {
+            sfx = GetComponent<AudioSource>();
+            yield return new WaitForSeconds(0);
+            AudioSource.PlayClipAtPoint(unitDeathSound, transform);
+        }
+
+        public IEnumerator WaveStartSound(Vector3 transform)
+        {
+            sfx = GetComponent<AudioSource>();
+            yield return new WaitForSeconds(0);
+            AudioSource.PlayClipAtPoint(waveStartSound, transform);
+        }
+
     }
 }
