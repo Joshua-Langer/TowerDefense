@@ -29,7 +29,6 @@ namespace TowerDefense.UI{
             #if UNITY_EDITOR
             quitButton.SetActive(false);
             #endif
-            
         }
 
         

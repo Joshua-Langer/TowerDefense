@@ -106,11 +106,13 @@ namespace TowerDefense.UI{
         public void PauseMainMenu()
         {
             UIManager.Instance.MainMenu();
+            Time.timeScale = 1;
         }
 
         public void PauseRestartLevel()
         {
             UIManager.Instance.RestartLevel();
+            Time.timeScale = 1;
         }
 
         public void PauseQuitGame()
