@@ -51,8 +51,16 @@ namespace TowerDefense.Units{
                 }
                 else
                 {
-                    Destroy(gameObject);
-                    PlayerManager.Instance.Health--;
+                    if(unitBase.isBoss)
+                    {
+                        Destroy(gameObject);
+                        PlayerManager.Instance.Health = 0;
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                        PlayerManager.Instance.Health--;
+                    }
                 }
             }
         }

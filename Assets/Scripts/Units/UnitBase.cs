@@ -11,5 +11,6 @@ namespace TowerDefense.Units{
         public float speed;
         public int armor;
         public int goldReward;
+        public bool isBoss;
     }
 }
