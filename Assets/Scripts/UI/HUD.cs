@@ -17,6 +17,7 @@ namespace TowerDefense.UI{
         public GameObject gameOverQuit;
         public GameObject pauseQuit;
         public GameObject levelCompleteQuit;
+        public GameObject fpsDisplay;
 
         void Awake()
         {
@@ -25,7 +26,7 @@ namespace TowerDefense.UI{
             pauseQuit.SetActive(false);
             levelCompleteQuit.SetActive(false);
             #endif
-            #if UNITY_EDITOR_WEBGL
+            #if UNITY_WEB_GL
             gameOverQuit.SetActive(false);
             pauseQuit.SetActive(false);
             levelCompleteQuit.SetActive(false);
@@ -65,6 +66,10 @@ namespace TowerDefense.UI{
             {
                 Toggle();
             }
+            if(Input.GetKeyDown(KeyCode.F4))
+            {
+                FPSToggle();
+            }
         }
 
         void Toggle()
@@ -82,6 +87,11 @@ namespace TowerDefense.UI{
             }
         }
 
+        void FPSToggle()
+        {
+            fpsDisplay.SetActive(!fpsDisplay.activeSelf);
+        }
+
         void GameIsOver()
         {
             gameOverPanel.SetActive(true);
@@ -96,11 +106,13 @@ namespace TowerDefense.UI{
         public void PauseMainMenu()
         {
             UIManager.Instance.MainMenu();
+            Time.timeScale = 1;
         }
 
         public void PauseRestartLevel()
         {
             UIManager.Instance.RestartLevel();
+            Time.timeScale = 1;
         }
 
         public void PauseQuitGame()

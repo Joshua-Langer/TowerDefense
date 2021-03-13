@@ -20,9 +20,9 @@ namespace TowerDefense.Managers{
             DontDestroyOnLoad(gameObject);
         }
 
-        public void NextLevel()
+        public void NextLevel(string levelName)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Will be bugged if there isn't a scene remaining.
+            SceneManager.LoadScene(levelName);
             SavePlayerToInstance();
         }
 
@@ -52,6 +52,9 @@ namespace TowerDefense.Managers{
         {
             PlayerInstance.CurrentGold = PlayerManager.Instance.Gold;
             PlayerInstance.CurrentHealth = PlayerManager.Instance.Health;
+            PlayerPrefs.SetInt("PlayerGold", PlayerInstance.CurrentGold);
+            PlayerPrefs.SetInt("PlayerHealth", PlayerInstance.CurrentHealth);
+            //save last level completed.
         }
 
         void LoadPlayerFromInstance()

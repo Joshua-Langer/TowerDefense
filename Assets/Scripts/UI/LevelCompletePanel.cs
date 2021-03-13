@@ -8,11 +8,16 @@ using UnityEngine.SceneManagement;
 namespace TowerDefense.UI{
     public class LevelCompletePanel : MonoBehaviour
     {
-        public GameObject nextLevel;
+        public string menuSceneName = "MainMenu";
+        public string nextLevel = "";
+        public int levelToUnlock;
+
+        //SceneFader?
         
         public void NextLevel()
         {
-            UIManager.Instance.NextLevel();
+            PlayerPrefs.SetInt("LevelReached", levelToUnlock);
+            UIManager.Instance.NextLevel(nextLevel);
             WaveSpawner.currentWave = 1;
             gameObject.SetActive(false);
         }
@@ -20,14 +25,6 @@ namespace TowerDefense.UI{
         void Awake()
         {
             GameManager.Instance.LevelComplete = false;
-        }
-
-        void Start()
-        {
-            if(SceneManager.GetActiveScene().buildIndex == 5)
-            {
-                nextLevel.SetActive(false);
-            }
         }
     }
 }

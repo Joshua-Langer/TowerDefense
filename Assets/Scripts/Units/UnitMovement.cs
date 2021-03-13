@@ -12,6 +12,7 @@ namespace TowerDefense.Units{
         public UnitBase unitBase;
         [HideInInspector] public int health;
         [HideInInspector] public int armor;
+        [HideInInspector] public int goldRewardOnDeath;
         Sprite sprite;
         SpriteRenderer _unitSprite;
 
@@ -21,6 +22,7 @@ namespace TowerDefense.Units{
             _unitSprite = GetComponent<SpriteRenderer>();
             health = unitBase.health;
             armor = unitBase.armor;
+            goldRewardOnDeath = unitBase.goldReward;
         }
         void Start()
         {
@@ -49,8 +51,16 @@ namespace TowerDefense.Units{
                 }
                 else
                 {
-                    Destroy(gameObject);
-                    PlayerManager.Instance.Health--;
+                    if(unitBase.isBoss)
+                    {
+                        Destroy(gameObject);
+                        PlayerManager.Instance.Health = 0;
+                    }
+                    else
+                    {
+                        Destroy(gameObject);
+                        PlayerManager.Instance.Health--;
+                    }
                 }
             }
         }

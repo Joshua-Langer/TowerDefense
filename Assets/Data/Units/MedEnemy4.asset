@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 3}
   speed: 6
   armor: 9
+  goldReward: 100

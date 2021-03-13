@@ -31,13 +31,17 @@ namespace TowerDefense.Projectile{
             {
                 if(target != null)
                 {
-                    //TEMP, will use a bar for health later. Still very temp for the armor.
-                    target.GetComponent<UnitMovement>().health -= Mathf.Max((damage - target.GetComponent<UnitMovement>().armor), 0);
+                    Transform unitHealthBarTransform = target.transform.Find("HealthBar");
+                    HealthBar healthBar = unitHealthBarTransform.gameObject.GetComponent<HealthBar>();
+                    healthBar.currentHealth -= Mathf.Max((damage - target.GetComponent<UnitMovement>().armor), 0);
 
-                    if(target.GetComponent<UnitMovement>().health <= 0)
+                    if(healthBar.currentHealth <= 0)
                     {
+                        PlayerManager.Instance.Gold += target.GetComponent<UnitMovement>().goldRewardOnDeath;
                         Destroy(target);
-                        PlayerManager.Instance.Gold += 50;
+                        //SFX and VFX
+                        AudioSource audioSource = target.GetComponent<AudioSource>();
+                        AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                     }
                 }
                 Destroy(gameObject);

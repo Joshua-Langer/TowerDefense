@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7576261596943145441}
   - component: {fileID: -8046465790609656023}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: BaseTowerProjectile1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 5
+  damage: 6
   target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}

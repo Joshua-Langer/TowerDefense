@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using TowerDefense.Managers;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TowerDefense.UI{
     public class MainMenu : MonoBehaviour
     {
         public GameObject quitButton;
+        public GameObject infoPanel;
+        public GameObject creditsPanel;
 
         public void StartGame()
         {
-            UIManager.Instance.StartGame();
+            SceneManager.LoadScene("LevelSelect");
         }
 
         public void QuitGame()
@@ -19,16 +22,35 @@ namespace TowerDefense.UI{
             Application.Quit();
         }
 
+        public void OpenInfo()
+        {
+            infoPanel.SetActive(true);
+        }
+
+        public void CloseInfo()
+        {
+            infoPanel.SetActive(false);
+        }
+
+        public void OpenCredits()
+        {
+            creditsPanel.SetActive(true);
+        }
+
+        public void CloseCredits()
+        {
+            creditsPanel.SetActive(false);
+        }
+
         void Awake()
         {
-            #if UNITY_EDITOR_WEB_GL
+            #if UNITY_WEB_GL
             quitButton.SetActive(false);
             #endif
 
             #if UNITY_EDITOR
             quitButton.SetActive(false);
             #endif
-            
         }
 
         

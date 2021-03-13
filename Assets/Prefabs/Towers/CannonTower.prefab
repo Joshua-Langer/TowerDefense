@@ -131,13 +131,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - cost: 125
-    fireRate: 2
+    fireRate: 1.75
     towerGO: {fileID: 1116575822916570364}
     projectile: {fileID: 7576261596943145446, guid: c6f17123fbc61ce499d10b0f6e33b753,
       type: 3}
     firePoint: {fileID: 4485237757375443537}
   - cost: 100
-    fireRate: 1.5
+    fireRate: 1.3
     towerGO: {fileID: 1116575824625301401}
     projectile: {fileID: 7576261596943145446, guid: a535613e34199ff4ea96274f96e9e5f4,
       type: 3}

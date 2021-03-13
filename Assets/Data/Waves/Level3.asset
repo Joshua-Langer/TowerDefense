@@ -16,5 +16,5 @@ MonoBehaviour:
   waveLimit: 3
   bossWave: 0
   waveUnits:
-  - {fileID: 6669104526027914877, guid: 0e00e2bf83d08104e94ac5f0e791f494, type: 3}
-  - {fileID: 5971044719526172935, guid: 118e7e48cc4d21144bbf696de85c9f97, type: 3}
+  - {fileID: 5971044719526172935, guid: db04d23e0ad630246b035d7f7f130e50, type: 3}
+  - {fileID: 1446893203681791026, guid: 54c6b019031118c4eb5848a83cb31d81, type: 3}

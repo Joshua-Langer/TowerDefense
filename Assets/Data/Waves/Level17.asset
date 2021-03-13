@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a1743d9820a6a47ac805075c89d79b, type: 3}
+  m_Name: Level17
+  m_EditorClassIdentifier: 
+  unitCount: 8
+  waveLimit: 3
+  bossWave: 0
+  waveUnits:
+  - {fileID: 6669104526027914877, guid: 0e00e2bf83d08104e94ac5f0e791f494, type: 3}
+  - {fileID: 5971044719526172935, guid: 118e7e48cc4d21144bbf696de85c9f97, type: 3}
+  - {fileID: 1446893203681791026, guid: 04e7b0021df9b204ba8932b9b57b972c, type: 3}
