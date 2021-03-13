@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TowerDefense.Managers;
-using UnityEditor;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 namespace TowerDefense.UI{
     public class MainMenu : MonoBehaviour
@@ -12,9 +7,11 @@ namespace TowerDefense.UI{
         public GameObject infoPanel;
         public GameObject creditsPanel;
 
+        public SceneFader sceneFader;
+
         public void StartGame()
         {
-            SceneManager.LoadScene("LevelSelect");
+            sceneFader.FadeTo("LevelSelect");
         }
 
         public void QuitGame()

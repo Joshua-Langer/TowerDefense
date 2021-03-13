@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TowerDefense.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TowerDefense.Managers{
     public class PlayerManager : MonoBehaviour

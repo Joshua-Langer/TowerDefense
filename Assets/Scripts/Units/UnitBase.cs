@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TowerDefense.Units{
     [CreateAssetMenu(fileName = "Unit", menuName = "TowerDefenseConfig/Units", order = 2)]

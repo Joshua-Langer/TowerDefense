@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TowerDefense.Managers;
+﻿using TowerDefense.Managers;
 using TowerDefense.Player;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace TowerDefense.UI
@@ -11,6 +8,7 @@ namespace TowerDefense.UI
     public class LevelSelect : MonoBehaviour
     {
         public Button[] levelButtons;
+        public SceneFader sceneFader;
 
         void Awake()
         {
@@ -26,14 +24,14 @@ namespace TowerDefense.UI
             {
                 if(i + 1 > levelReached)
                 {
-                    levelButtons[i].enabled = false;
+                    levelButtons[i].interactable = false;
                 }
             }
         }
 
         public void Select(string levelName)
         {
-            SceneManager.LoadScene(levelName); //May implement SceneFader Later?
+            sceneFader.FadeTo(levelName); //May implement SceneFader Later?
         }
 
         void LoadPlayerFromInstance()
