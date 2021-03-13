@@ -47,11 +47,15 @@ namespace TowerDefense.Waves{
                     PlayerManager.Instance.Gold += 125;
                     enemiesSpawned = 0;
                     lastSpawnTime = Time.time;
+                    if(waveConfig.bossWave && GameManager.Instance.GameOver)
+                    {
+                        GameManager.Instance.LevelComplete = false;
+                    }
+                    else
+                    {
+                        GameManager.Instance.LevelComplete = true;
+                    }
                 }
-            }
-            else
-            {
-                GameManager.Instance.LevelComplete = true;
             }
         }
     }

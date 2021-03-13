@@ -9753,12 +9753,12 @@ PrefabInstance:
     - target: {fileID: 5264790551746487666, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
         type: 3}
       propertyPath: nextLevel
-      value: Level2
+      value: Level6
       objectReference: {fileID: 0}
     - target: {fileID: 5264790551746487666, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
         type: 3}
       propertyPath: levelToUnlock
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5264790551746487666, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
         type: 3}
