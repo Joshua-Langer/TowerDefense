@@ -26,7 +26,7 @@ namespace TowerDefense.UI
             {
                 if(i + 1 > levelReached)
                 {
-                    levelButtons[i].interactable = false;
+                    levelButtons[i].enabled = false;
                 }
             }
         }
