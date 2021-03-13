@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a1743d9820a6a47ac805075c89d79b, type: 3}
   m_Name: Level24
   m_EditorClassIdentifier: 
-  unitCount: 8
+  unitCount: 4
   waveLimit: 3
   bossWave: 0
   waveUnits:
-  - {fileID: 1446893203681791026, guid: 54c6b019031118c4eb5848a83cb31d81, type: 3}
-  - {fileID: 3881202336487702790, guid: efa9cb776d2432444b19ca155a9db432, type: 3}
+  - {fileID: 6669104526027914877, guid: d83d6282a915cae4db4f0bdc5f9c2d25, type: 3}
+  - {fileID: 5971044719526172935, guid: f64dbfc874b678744b2c7d62b74753a0, type: 3}
+  - {fileID: 1446893203681791026, guid: d45bb66b32d6f7546a08c71ac34b5718, type: 3}
+  - {fileID: 3881202336487702790, guid: d8a92cea734a0fc48a95688f7381e045, type: 3}

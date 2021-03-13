@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitCount: 1
   waveLimit: 2
-  bossWave: 0
+  bossWave: 1
   waveUnits:
-  - {fileID: 3881202336487702790, guid: 3fde4710b7882e34fa9464b788d79c2f, type: 3}
+  - {fileID: 3881202336487702790, guid: efdc1ad6f7bd7b44fb627c360614d0b9, type: 3}

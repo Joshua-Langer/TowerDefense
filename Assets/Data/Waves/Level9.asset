@@ -17,4 +17,5 @@ MonoBehaviour:
   bossWave: 0
   waveUnits:
   - {fileID: 5971044719526172935, guid: 118e7e48cc4d21144bbf696de85c9f97, type: 3}
-  - {fileID: 1446893203681791026, guid: 04e7b0021df9b204ba8932b9b57b972c, type: 3}
+  - {fileID: 1446893203681791026, guid: 54c6b019031118c4eb5848a83cb31d81, type: 3}
+  - {fileID: 3881202336487702790, guid: bdffc76d0da4bb749b141a51d1f9b109, type: 3}
