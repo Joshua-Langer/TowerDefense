@@ -1,4 +1,5 @@
 ﻿using TowerDefense.Player;
+using TowerDefense.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ namespace TowerDefense.Managers{
     public class UIManager : MonoBehaviour
     {
         public static UIManager Instance = null;
+        public SceneFader sceneFader;
 
         void Awake()
         {
@@ -22,24 +24,24 @@ namespace TowerDefense.Managers{
 
         public void NextLevel(string levelName)
         {
-            SceneManager.LoadScene(levelName);
+            sceneFader.FadeTo(levelName);
             SavePlayerToInstance();
         }
 
         public void RestartLevel()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //get the active scene buildIndex ID and load it again.
+            sceneFader.FadeTo(SceneManager.GetActiveScene().name); //get the active scene buildIndex ID and load it again.
             LoadPlayerFromInstance();
         }
 
         public void MainMenu()
         {
-            SceneManager.LoadScene(GameManager.Instance.LevelList[0]);
+            sceneFader.FadeTo(GameManager.Instance.LevelList[0]);
         }
 
         public void StartGame()
         {
-            SceneManager.LoadScene(GameManager.Instance.LevelList[1], LoadSceneMode.Single);
+            sceneFader.FadeTo(GameManager.Instance.LevelList[1]);
             SavePlayerToInstance(); //TEMP FOR NOW until the level screen is setup.
         }
 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TowerDefense.Managers;
+﻿using TowerDefense.Managers;
 using TowerDefense.Units;
 using UnityEngine;
 
@@ -12,6 +10,8 @@ namespace TowerDefense.Projectile{
         public GameObject target;
         public Vector3 startPos;
         public Vector3 targetPos;
+
+        [SerializeField] GameObject explosion;
 
         private float distance;
         private float startTime;
@@ -42,6 +42,7 @@ namespace TowerDefense.Projectile{
                         //SFX and VFX
                         AudioSource audioSource = target.GetComponent<AudioSource>();
                         AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+                        //Instantiate(explosion, target.transform.position, Quaternion.identity);
                     }
                 }
                 Destroy(gameObject);

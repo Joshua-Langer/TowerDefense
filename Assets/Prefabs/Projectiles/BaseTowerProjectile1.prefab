@@ -66,6 +66,8 @@ MonoBehaviour:
   target: {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   targetPos: {x: 0, y: 0, z: 0}
+  explosion: {fileID: 2832787168039809686, guid: 2dca9156a20cfff40837a4bdf43ab1ea,
+    type: 3}
 --- !u!1 &7576261598452124450
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TowerDefense.Units;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TowerDefense.Waves{
     [CreateAssetMenu(fileName = "Wave", menuName = "TowerDefenseConfig/Waves", order = 1)]

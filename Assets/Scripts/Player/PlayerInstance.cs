@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace TowerDefense.Player
+﻿namespace TowerDefense.Player
 {
     public static class PlayerInstance
     {
