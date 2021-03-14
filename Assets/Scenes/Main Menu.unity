@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327b157d60932834f94d2af67b1672c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFader: {fileID: 0}
+  sceneFader: {fileID: 269545396}
 --- !u!114 &301469450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,8 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f23a3b30e32f334fa86805ae6118dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitDeathSound: {fileID: 8300000, guid: 9de5583c8c9ce614db4f6f350ee2e45e, type: 3}
-  waveStartSound: {fileID: 8300000, guid: 94c8cfcd1d751c0409d4dca2244cc090, type: 3}
+  unitDeathSound: {fileID: 8300000, guid: 10fddcb35a6ae204ab96ec285aba630b, type: 3}
+  waveStartSound: {fileID: 8300000, guid: 755a2342287a8a34283c51151c4c9a24, type: 3}
 --- !u!4 &301469453
 Transform:
   m_ObjectHideFlags: 0
@@ -1779,7 +1779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Beta 0.2.2(Build 0050)
+  m_Text: Beta 0.3.1(Build 0068) RC
 --- !u!222 &810617285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1935,7 +1935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Demo
+  m_Text: Play
 --- !u!222 &1000705177
 CanvasRenderer:
   m_ObjectHideFlags: 0

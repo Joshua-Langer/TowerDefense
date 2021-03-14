@@ -11,6 +11,8 @@ namespace TowerDefense.Projectile{
         public Vector3 startPos;
         public Vector3 targetPos;
 
+        [SerializeField] GameObject explosion;
+
         private float distance;
         private float startTime;
 
@@ -40,6 +42,7 @@ namespace TowerDefense.Projectile{
                         //SFX and VFX
                         AudioSource audioSource = target.GetComponent<AudioSource>();
                         AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+                        //Instantiate(explosion, target.transform.position, Quaternion.identity);
                     }
                 }
                 Destroy(gameObject);
