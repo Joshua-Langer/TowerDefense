@@ -1260,6 +1260,11 @@ PrefabInstance:
       propertyPath: menuSceneName
       value: Main Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 5264790551746487670, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5264790551872575487, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
         type: 3}
       propertyPath: m_AnchorMax.y
