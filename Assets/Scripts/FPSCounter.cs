@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace TowerDefense
 {
     public class FPSCounter : MonoBehaviour
     {
-        public Text fpsDisplay;
+        public TextElement fpsDisplay;
 
         void Update()
         {
