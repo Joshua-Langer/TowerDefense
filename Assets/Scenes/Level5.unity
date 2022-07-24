@@ -9825,6 +9825,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7426484930181037058, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426484930181037058, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
+        type: 3}
+      propertyPath: levelToUnlock
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7919639566429161806, guid: bc3bf32c7aab8534a9679ae6078b7bb3,
         type: 3}
       propertyPath: m_AnchorMax.y
